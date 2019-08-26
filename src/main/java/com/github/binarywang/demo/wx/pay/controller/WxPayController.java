@@ -96,7 +96,7 @@ public class WxPayController {
    */
   @ApiOperation(value = "统一下单，并组装所需支付参数")
   @PostMapping("/createOrder")
-  public <T> T createOrder(@RequestBody WxPayUnifiedOrderRequest request) throws WxPayException {
+  public <T> T createOrder(@ModelAttribute @RequestBody WxPayUnifiedOrderRequest request) throws WxPayException {
     return this.wxService.createOrder(request);
   }
 
